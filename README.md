@@ -59,5 +59,27 @@ ldapsearch -LLL -x -H ldap:// -t -b "dc=example,dc=com" "uid=fulano"
 
 # adicionar a imagem no /tmp/
 
-REFERÊNCIA
+# Adicionar senha para um usuário
+ldappasswd -x -D cn=admin,dc=example,dc=com -W -S uid=junin,ou=alunos,dc=example,dc=com
+
+# # # Como mover um usuários # # #
+# Criar um arquivo: 
+vim move.ldif
+# Inserir as informações no arquivo:
+dn: uid=johnnn,dc=example,dc=com
+changetype: moddn
+newrdn: uid=johnnn
+deleteoldrdn: 1
+newsuperior: ou=alunos,dc=example,dc=com
+# Rodar o commando:
+ldapmodify -x -D "cn=admin,dc=example,dc=com" -W -f move.ldif
+# Inserir a senha admin
+# Verificar:
+ldapsearch -x uid=johnnn -b ou=professores,dc=example,dc=com
+
+
+
+
+REFERÊNCIAS
 https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system
+https://ff1959.wordpress.com/2011/08/01/mastering-moddn/
