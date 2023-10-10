@@ -1,0 +1,3 @@
+dn: uid=fulano,ou=professores,dc=example,dc=com
+changetype: modify
+delete: description

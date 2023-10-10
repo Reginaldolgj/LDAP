@@ -1,0 +1,9 @@
+dn: uid=fulano,ou=professores,dc=example,dc=com
+changetype: add
+objectClass: inetOrgPerson
+description: Fulano John Smith 
+ é um profesor da
+ universidade.
+cn: Fulano John Smith
+sn: Fulano
+uid: fulano

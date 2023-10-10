@@ -1,0 +1,4 @@
+dn: uid=fulano,ou=professores,dc=example,dc=com
+changetype: modify
+add: jpegPhoto
+jpegPhoto:< file:///tmp/john.jpg
