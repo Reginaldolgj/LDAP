@@ -1,7 +1,7 @@
 # LDAP
 # # # COMO CRIAR UM GRUPO NO LDAP # # # 
 # Criar um arquivo:
-vim criaGrupo.ldif
+vim createGroup.ldif
 # Inserir as informações no arquivo:
 dn: ou=professores,dc=example,dc=com
 objectClass: organizationalUnit
