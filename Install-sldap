@@ -1,0 +1,10 @@
+apt install slapd ldap-utils
+  #1234
+dpkg-reconfigure slapd
+  #DNS Domain Name: example.com
+  #Org name: example
+  #Admin Password: admin
+  #1234
+systemctl enable slapd
+ss -ln | grep 389
+systemctl start slapd && systemctl status slapd
